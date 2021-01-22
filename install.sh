@@ -1,4 +1,3 @@
-GNU nano 5.4                  install.sh                  Modified
 checkroot() {
 
 if [[ "$(id -u)" -ne 0 ]]; then
