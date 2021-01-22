@@ -1,5 +1,2 @@
-pytube
+pyngrok
 termcolor
-pyfiglet
-requests
-ffmpeg
