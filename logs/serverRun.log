@@ -1,1 +1,22 @@
-1
+[Wed Jun 16 15:44:43 2021] PHP 8.0.5 Development Server (http://localhost:4060) started
+[Wed Jun 16 15:44:50 2021] [::1]:5324 Accepted
+[Wed Jun 16 15:44:50 2021] [::1]:5323 Accepted
+[Wed Jun 16 15:44:50 2021] [::1]:5323 [200]: GET /
+[Wed Jun 16 15:44:50 2021] [::1]:5323 Closing
+[Wed Jun 16 15:44:50 2021] [::1]:5324 [404]: GET /robots.txt - No such file or directory
+[Wed Jun 16 15:44:50 2021] [::1]:5324 Closing
+[Wed Jun 16 15:44:51 2021] [::1]:5329 Accepted
+[Wed Jun 16 15:44:51 2021] [::1]:5329 [200]: GET /core/info.js
+[Wed Jun 16 15:44:51 2021] [::1]:5329 Closing
+[Wed Jun 16 15:44:51 2021] [::1]:5330 Accepted
+[Wed Jun 16 15:44:51 2021] [::1]:5330 [404]: GET /robots.txt?1623842090821 - No such file or directory
+[Wed Jun 16 15:44:51 2021] [::1]:5330 Closing
+[Wed Jun 16 15:44:52 2021] [::1]:5331 Accepted
+[Wed Jun 16 15:44:52 2021] [::1]:5331 [404]: GET /favicon.ico - No such file or directory
+[Wed Jun 16 15:44:52 2021] [::1]:5331 Closing
+[Wed Jun 16 15:44:53 2021] [::1]:5334 Accepted
+[Wed Jun 16 15:44:53 2021] [::1]:5334 [200]: GET /info/redirectUrl
+[Wed Jun 16 15:44:53 2021] [::1]:5334 Closing
+[Wed Jun 16 15:44:53 2021] [::1]:5335 Accepted
+[Wed Jun 16 15:44:54 2021] [::1]:5335 [200]: POST /core/save.php
+[Wed Jun 16 15:44:54 2021] [::1]:5335 Closing

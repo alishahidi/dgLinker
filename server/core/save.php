@@ -1,5 +1,7 @@
 <?php
-use core\ip;
+
+use Core\Ip;
+
 require_once("ip.php");
 $ipInfo = ip::get_all_info();
 $info["client"] = $_POST;

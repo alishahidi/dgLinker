@@ -1,8 +1,15 @@
 from modules import loading
 
-stat_file = 0
-def monitorLog(bot):
-    def printLog(log):
+
+def printLog(log):
+        with open("appData/chatId", "r") as bot:
+            chatId = bot.read()
+        with open("appData/botToken", "r") as bot:
+            token = bot.read()
+        if chatId and token:
+            bot = True
+        else:
+            bot = False
         client = log["client"]
         ipInfo = log["ip_info"]
         print (f"\n {loading.colored('[!]', 'green')} IP: {ipInfo['ip']}  Opened link : {loading.time.ctime()} \n")
@@ -19,18 +26,26 @@ def monitorLog(bot):
         if(bot):
             loading.telegram.sendMessage(ip)  
         print(f"\n\n  [!~] {loading.colored('Wating For Another', 'red')} [~!]")
-    def readLog():
-        global stat_file
-        if not str(loading.os.stat(loading.os.path.realpath('server/infoLogs/info.log')).st_size) == stat_file:
-            stat_file = str(loading.os.stat(loading.os.path.realpath('server/infoLogs/info.log')).st_size)
-            with open(loading.os.path.realpath('server/infoLogs/info.log'), "r") as log:
-                log = log.read()
-            try:
-                clearLog()
-                printLog(loading.json.loads(log))
-            except:
-                ""
-    while True:
+        
+def readLog():
+    stat_file = 0
+    if not str(loading.os.stat(loading.os.path.realpath('server/infoLogs/info.log')).st_size) == stat_file:
+        stat_file = str(loading.os.stat(loading.os.path.realpath('server/infoLogs/info.log')).st_size)
+        with open(loading.os.path.realpath('server/infoLogs/info.log'), "r") as log:
+            log = log.read()
+        try:
+            printLog(loading.json.loads(log))
+            clearLog()
+        except:
+            ""
+runMonitor = True
+
+def stopMonitor():
+    global runMonitor
+    runMonitor = False
+
+def monitorLog():
+    while runMonitor:
         readLog()
         loading.time.sleep(1)
 

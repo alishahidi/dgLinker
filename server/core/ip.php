@@ -1,7 +1,7 @@
 <?php
-namespace core;
+namespace Core;
 
-class ip{
+class Ip{
 
     private static $allInfo;
 
@@ -58,8 +58,7 @@ class ip{
     public static function get_all_info(){
         self::$allInfo = array_merge(self::get_info_from_ip());
         self::$allInfo["ip"] = self::$allInfo["query"];
-        unlink(self::$allInfo["query"]);
+        unset(self::$allInfo["query"]);
         return self::$allInfo;
-
     }
 }

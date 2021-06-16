@@ -1,10 +1,12 @@
 from modules import loading
 
-loading.loading()
-loading.checkData.clearLog()
-loading.config.configServer()
-bot = loading.config.configTokenBot()
-loading.loading()
-ngrokTunnel = loading.server.getConnection(4050)
-loading.server.printConnection(ngrokTunnel)
-loading.checkData.monitorLog(bot)
+# register signal
+loading.signal.signal(loading.signal.SIGINT,loading.signal_exit_handler)
+
+loading.loading();
+
+run = True
+
+while run:
+    if loading.run() == False:
+        run = False

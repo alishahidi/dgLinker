@@ -24,7 +24,9 @@ def serverClose(ngrokAddress):
     closePhpServer()
     loading.ngrok.disconnect(ngrokAddress)
 
-def getConnection(port, close = [False, None]):
+def getConnection(close = [False, None]):
+    with open('appData/port', "r") as portFile:
+        port = int(portFile.read())
     if close[0]:
         serverClose(close[1])
     ngrokConnection = serverRun("server", port)
